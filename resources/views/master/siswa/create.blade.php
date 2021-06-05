@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Siswa')
-@section('menu_siswa', 'active')
-
 
 @section('content')
 <h2 class="mt-2">Form Siswa</h2>

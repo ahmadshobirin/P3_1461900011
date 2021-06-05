@@ -19,10 +19,10 @@
                 <li class="nav-item">
                     <a class="nav-link @yield('menu_siswa')" href="{{ route("siswa.index") }}">Data Siswa</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link @yield('menu_guru')" href="#">Data Guru</a>
-                </li>
                 <li class="nav-item">
+                    <a class="nav-link @yield('menu_guru')" href="{{ route("guru.index") }}">Data Guru</a>
+                </li>
+                {{-- <li class="nav-item">
                     <a class="nav-link @yield('menu_kelas')" href="#">Data Kelas</a>
                 </li> --}}
             </ul>
