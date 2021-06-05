@@ -5,23 +5,13 @@
 @section('content')
 <h2 class="mt-5">Data guru</h2>
 <p class="lead">Data guru</p>
-<form action="{{ route('guru.index') }}" method="GET">
-    <div class="d-flex justify-content-between pt-2">
-        <div class="d-flex">
-            <div class="mr-2 mb-2">
-                <input class="form-control" id="search" name="search" type="text" placeholder="Search..">
-            </div>
-            <div class="mr-2 mb-2">
-                <button type="submit" class="btn btn-primary">Apply</button>
-                <a href="{{ route('guru.index') }}" class="btn btn-warning">Reset</a>
-            </div>
-        </div>
+<div class="d-flex justify-content-between pt-2">
+    <div class="d-flex"></div>
 
-        <div class="mr-2 mb-2">
-            <a href="{{ route("guru.create") }}" class="btn btn-primary">Create</a>
-        </div>
+    <div class="mr-2 mb-2">
+        <a href="{{ route("guru.create") }}" class="btn btn-primary">Create</a>
     </div>
-</form>
+</div>
 <table class="table table-bordered">
     <thead>
         <tr>

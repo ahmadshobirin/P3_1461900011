@@ -14,14 +14,20 @@ class KelasController extends Controller
      */
     public function index(Request $request)
     {
-        $data = DB::table("kelas")
+        $pelajaran = DB::table("guru")->select('mengajar')->distinct()->get();
+        $query = DB::table("kelas")
             ->select("siswa.nama as siswa", "guru.nama as guru", "guru.mengajar as pelajaran")
             ->join("siswa", "siswa.id", "kelas.id_siswa")
             ->join("guru", "guru.id", "kelas.id_guru")
-            ->orderBy("kelas.id", "desc")
-            ->paginate(10);
+            ->orderBy("kelas.id", "desc");
 
-        return view('master.kelas.index-0011', compact('data'));
+        if($request->has("pelajaran")){
+            $query->where("guru.mengajar", $request->pelajaran);
+        }
+
+        $data = $query->paginate(10);
+
+        return view('master.kelas.index-0011', ["data" => $data, "pelajaran" => $pelajaran]);
     }
 
     /**

@@ -9,14 +9,18 @@
     <div class="d-flex justify-content-between pt-2">
         <div class="d-flex">
             <div class="mr-2 mb-2">
-                <input class="form-control" id="search" name="search" type="text" placeholder="Search..">
+                <select name="pelajaran" id="pelajaran" class="form-control">
+                    <option value="" selected disabled>Pilih Mata Pelajaran</option>
+                    @foreach ($pelajaran as $item)
+                        <option value="{{ $item->mengajar}} ">{{ $item->mengajar}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="mr-2 mb-2">
                 <button type="submit" class="btn btn-primary">Apply</button>
                 <a href="{{ route('kelas.index') }}" class="btn btn-warning">Reset</a>
             </div>
         </div>
-
         <div class="mr-2 mb-2">
             <a href="{{ route('kelas.create') }}" class="btn btn-primary"> Create </a>
         </div>

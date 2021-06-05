@@ -12,9 +12,9 @@ class GuruController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $data = DB::table('guru')->orderBy("nama", "asc")->where("nama", "LIKE", "%$request->search%")->paginate(10);
+        $data = DB::table('guru')->orderBy("nama", "asc")->paginate(10);
 
         return view("master.guru.index-0011", compact("data"));
     }
