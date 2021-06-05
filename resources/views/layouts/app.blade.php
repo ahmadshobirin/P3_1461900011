@@ -22,9 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link @yield('menu_guru')" href="{{ route("guru.index") }}">Data Guru</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link @yield('menu_kelas')" href="#">Data Kelas</a>
-                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link @yield('menu_kelas')" href="{{ route("kelas.index") }}">Data Kelas</a>
+                </li>
             </ul>
         </div>
     </nav>
